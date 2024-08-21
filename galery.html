@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Галерея | НАСЛЕДИЕ</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__logo">
+                        <img src="img/logo 2.svg" alt="logo" class="logo">
+                    </div>
+        
+                    <nav class="header__nav">
+                        <ul class="header__nav_menu">
+                            <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+                            <li class="header__nav-item"><a href="galery_catalog.html" class="header__nav-link">Галерея</a></li>
+                            <li class="header__nav-item"><a href="documents.html" class="header__nav-link">Документы</a></li>
+                            <li class="header__nav-item"><a href="chat.html" class="header__nav-link">Чат</a></li>
+                            <li class="header__nav-item"><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                        </ul>
+                    </nav>
+        
+                    <div class="header__buttons">
+                        <button class="header__notifications">
+                            <img src="img/notifications.svg" alt="notifications" class="bell">
+                        </button>
+
+                        <div class="notifications-popup">
+                            <div class="notifications-popup__header">Уведомления</div>
+                            <div class="notifications-popup__content">
+                                <!-- Здесь будут отображаться уведомления -->
+                            </div>
+                            <button class="notifications-popup__close">&times;</button>
+                        </div>
+            
+                        <button class="header__exit">
+                            <img src="img/exit.svg" alt="exit" class="exit_icon">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="header__separator"></div>
+            </div>
+        </header>
+        
+        <main class="main_">
+            <section class="galery">
+                <div class="container">
+                    <h1 class="galery__title">Галерея</h1>
+
+                    <div class="galery__content">
+                        <div class="galery__content_tools">
+                            <div class="galery__content_tools-filter">
+                                <img src="./img/filter_icon.svg" alt="filter">
+
+                                <p class="filter__text">Фильтр</p>
+
+                                <div class="filter__dropdown">  
+                                    <button onclick="toggleDropdown()" class="dropbtn">Сначала новые  
+                                    </button>  
+                                    <div id="myDropdown" class="dropdown-content">  
+                                        <!-- Пункты будут динамически добавляться через JS -->  
+                                    </div>  
+                                </div>  
+                            </div>
+
+                            <div class="galery__photo_weather">
+                                <img src="./img/weather_icon.svg" alt="weather" class="weather">
+                                <div class="main__photo_weather_text">New-York City, 26 C°</div>
+                            </div>
+                        </div>
+
+                        <div class="galery__content_photos">
+                            <div class="image-container">  
+                                <img src="./img/galery_img1.jpg" alt="Картинка 1" onclick="showPopup('Контент для картинки 1', '05-10-2023 15:47')">  
+                                <img src="./img/galery_img2.jpg" alt="Картинка 2" onclick="showPopup('Контент для картинки 2', '06-10-2023 12:01')">  
+                                <img src="./img/galery_img3.jpg" alt="Картинка 3" onclick="showPopup('Контент для картинки 3', '07-10-2023 14:08')">  
+                                <img src="./img/galery_img4.jpg" alt="Картинка 4" onclick="showPopup('Контент для картинки 4', '08-10-2023 18:34')">  
+                                <img src="./img/galery_img5.jpg" alt="Картинка 5" onclick="showPopup('Контент для картинки 5', '09-10-2023 10:20')">  
+                                <img src="./img/galery_img6.jpg" alt="Картинка 6" onclick="showPopup('Контент для картинки 6', '10-10-2023 16:33')">  
+                            </div>  
+                            
+                            <!-- Pop-up окно -->  
+                            <div id="popup" class="popup">  
+                                <div class="popup-content">  
+                                    <span class="close" onclick="closePopup()">&times;</span> 
+                                    <img onclick="location.href='https://qna.habr.com/q/755797';" id="camera_id" src="./img/camera.svg" alt="" class="popup_camera">
+                                    <h2 id="popup-date"></h2>  
+                                    <img class="popup_img" id="popup-image" src="" alt="Поп-ап изображение">  
+                                    
+                                    <div class="popup__comments">
+                                        <div class="popup__comments_title">Комментарии:</div>
+
+                                        <div class="popup__comments_content">
+                                            <div class="popup__comments-item">
+                                                <div class="popup__comments-item_flex-container">
+                                                    <div class="popup__comments-item_flex-container_block1">
+                                                        <div class="popup__comments-item_name_image">
+                                                            <img src="./img/avatar_comments.svg" alt="">
+                                                            <p class="popup__comments_name">Менеджер проекта:</p>
+                                                        </div>
+
+                                                        <a href="#" class="popup__comments_chat-link">Перейти в чат</a>
+                                                    </div>
+                                                    
+                                                    <div class="popup__comments-item_flex-container_block2">
+                                                        <P class="popup__comments_text">Сегодня завершили монтаж кровли. Отличная работа команды!</P>
+                                                    </div>
+
+                                                    <div class="popup__comments-item_flex-container_block3">
+                                                        <P class="popup__comments_time">17:04</P>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="popup__comments-item">
+                                                <div class="popup__comments-item_flex-container">
+                                                    <div class="popup__comments-item_flex-container_block1">
+                                                        <div class="popup__comments-item_name_image">
+                                                            <img src="./img/avatar_comments.svg" alt="">
+                                                            <p class="popup__comments_name">Электрик:</p>
+                                                        </div>
+
+                                                        <a href="#" class="popup__comments_chat-link">Перейти в чат</a>
+                                                    </div>
+                                                    
+                                                    <div class="popup__comments-item_flex-container_block2">
+                                                        <p class="popup__comments_text">Сегодня завершена замена старой проводки.</p>
+                                                    </div>
+                                                    
+                                                    <div class="popup__comments-item_flex-container_block3">
+                                                        <p class="popup__comments_time">18:15</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__block">
+                <p>ООО АСК "Наследие". All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/galery.js"></script>
+</body>
+</html>

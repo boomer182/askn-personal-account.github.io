@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Чат | НАСЛЕДИЕ</title>
+</head>
+<body style="background-color: #DBE5D5;">
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__logo">
+                        <img src="img/logo 2.svg" alt="logo" class="logo">
+                    </div>
+        
+                    <nav class="header__nav">
+                        <ul class="header__nav_menu">
+                            <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+                            <li class="header__nav-item"><a href="galery_catalog.html" class="header__nav-link">Галерея</a></li>
+                            <li class="header__nav-item"><a href="documents.html" class="header__nav-link">Документы</a></li>
+                            <li class="header__nav-item"><a href="chat.html" class="header__nav-link">Чат</a></li>
+                            <li class="header__nav-item"><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                        </ul>
+                    </nav>
+        
+                    <div class="header__buttons">
+                        <button class="header__notifications">
+                            <img src="img/notifications.svg" alt="notifications" class="bell">
+                        </button>
+
+                        <div class="notifications-popup">
+                            <div class="notifications-popup__header">Уведомления</div>
+                            <div class="notifications-popup__content">
+                                <!-- Здесь будут отображаться уведомления -->
+                            </div>
+                            <button class="notifications-popup__close">&times;</button>
+                        </div>
+            
+                        <button class="header__exit">
+                            <img src="img/exit.svg" alt="exit" class="exit_icon">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="header__separator"></div>
+            </div>
+        </header>
+        
+        <main class="main_">
+            <section class="chat">
+                <div class="container">
+                    <h1 class="chat__title">Онлайн-чат</h1>
+
+                    <div class="chat__nav">
+                        <a href="#"><img src="./img/lupa_zalupa.svg" alt=""></a>
+                        <a href="#"><img src="./img/attachments.svg" alt=""></a>
+                    </div>
+
+                    <div id="topElement" class="top-element"></div>
+
+                    <div class="chat__content">
+                        <div class="chat__item chat__item-user1">
+                            <img src="./img/chat_avatar.svg" alt="photo" class="chat__person-avatar">
+                          
+                            <div class="chat__messages">
+                              <div class="chat__message">
+                                <div class="chat__message-content">Добрый день! Для начала процесса оформления услуг нам потребуются определенные документы. Вы готовы их предоставить?</div>
+                                <div class="chat__message-time">9:03</div>
+                              </div>
+                            </div>
+                        </div>
+                      
+                        <div class="chat__item chat__item--responder">
+                            <img src="./img/chat_avatar.svg" alt="photo" class="chat__person-avatar">
+                          
+                            <div class="chat__messages">
+                              <div class="chat__message">
+                                <div class="chat__message-content chat__message-content--responder">Здравствуйте! Конечно, я готов предоставить необходимые документы. Какие именно вам нужны?</div>
+                                <div class="chat__message-time chat__message-time--responder">9:05</div>
+                              </div>
+                          </div>
+                        </div>
+
+                        <div class="chat__item chat__item-user1">
+                            <img src="./img/chat_avatar.svg" alt="photo" class="chat__person-avatar">
+                          
+                            <div class="chat__messages">
+                              <div class="chat__message">
+                                <div class="chat__message-content">Нам понадобятся копии вашего паспорта, ИНН, а также документы, подтверждающие право собственности на объект. Если у вас есть дополнительные документы, которые могут быть полезны для оформления услуги, также пригодятся.</div>
+                                <div class="chat__message-time">9:03</div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="chat__item chat__item--responder">
+                            <img src="./img/chat_avatar.svg" alt="photo" class="chat__person-avatar">
+                            <div class="chat__messages">
+                                <div class="chat__message">
+                                    <div class="chat__message-content chat__message-content--responder">
+                                        Спасибо за информацию! Я уже подготовил все необходимые документы и готов их предоставить.
+                                        <div class="chat__message-file chat__message-file--responder">
+                                            <div class="chat__message-file-content">
+                                                <div class="chat__message-file-icon_name">
+                                                    <img src="./img/adobe_icon.svg" alt="">
+                                                    <div class="chat__message-file-name">docs.pdf</div>
+                                                </div>
+                                                <img class="chat__download_icon" src="./img/download_icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat__message-time chat__message-time--responder">9:05</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="chatForm" class="chat-input-form">
+                        <input type="text" class="chat-input" placeholder="Введите сообщение" required>
+                        
+                        <label class="file-upload">
+                            <img class="file-upload-img" src="./img/file_button.svg" alt="">
+                            <input type="file" id="fileInput" name="file">
+                        </label>
+                        
+                        <button type="submit" class="send-button">ОТПРАВИТЬ</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__block footer__chat">
+                <p>ООО АСК "Наследие". All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/chat.js"></script>
+</body>
+</html>

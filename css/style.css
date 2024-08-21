@@ -1,0 +1,2036 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;    
+}
+
+html, body {
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-top: 32px;
+}
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url(/fonts/TTFirsNeue-Light.ttf) format('ttf'), url(/fonts/TTFirsNeue-Light.woff) format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url(/fonts/TTFirsNeue-Medium.ttf) format('ttf'), url(/fonts/TTFirsNeue-Medium.woff) format('woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url(/fonts/TTFirsNeue-DemiBold.ttf) format('ttf'), url(/fonts/TTFirsNeue-DemiBold.woff) format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Mastodon';
+    src: url(/fonts/mastodon.bold.ttf) format('ttf');
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1380px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-left: 42px;
+    margin-right: 42px;
+}
+
+.header__nav_menu {
+    display: flex;
+    gap: 110px;
+    padding-left: 30px;
+}
+
+.header__nav-link {
+    font-family: 'TT Firs Neue';
+    font-weight: 500;
+    font-size: 24px;
+    color: rgba(101, 101, 101, 1);
+}
+
+.header__nav-link:hover {
+    color: #657955;
+}
+
+.header__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.notifications-popup {
+    position: absolute;
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+}
+
+.notification {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notifications-popup__header {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-family: 'TT Firs Neue';
+    font-weight: 500;
+    color: rgba(101, 101, 101, 1);
+}
+
+.notifications-popup__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    max-height: 200px; /* Ограничение высоты контента */
+    overflow-y: auto; /* Добавляем прокрутку при необходимости */
+    font-family: 'TT Firs Neue';
+    font-weight: 300;
+    color: #000;
+}
+
+.notifications-popup__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.header__notifications {
+    width: 45px;
+    height: 45px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header__vertical_menu {
+    display: none;
+}
+
+.header__exit {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header__separator {
+    width: 1374px;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.05);
+    margin-top: 15px;
+    margin-bottom: 52px;
+}
+
+.header__inner_phone {
+    display: none;
+}
+
+.main {
+    max-width: 1380px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 45px;
+}
+
+.main__vidjet_container {
+    width: 735px;
+    height: 513px;
+    overflow: auto;
+    background-color: rgba(162, 197, 134, 0.06);
+    margin-top: 21px;
+}
+
+.main__vidjet_container::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f9f9fd;
+}
+  
+.main__vidjet_container::-webkit-scrollbar-thumb {
+    background-color: #cdd1ca;
+}
+  
+.main__vidjet_container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    background-color: #f9f9fd;
+}
+
+.main__vidjet_content {
+    margin-top: 29px;
+    margin-left: 24px;
+    margin-right: 59px;
+}
+
+.main__whats_new {
+    font-family: 'Mastodon';
+    font-weight: 700;
+    color: rgba(101, 121, 85, 1);
+    font-size: 64px;
+    margin: 0 auto;
+}
+
+.colortext {
+    color: rgba(101, 101, 101, 1);
+}
+
+.main__vidjet_content {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-left: 47px;
+}
+
+.main__vidjet_news_title {
+    display: inline;
+    color: #657955;
+    font-family: "TT Firs Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 13px;
+}
+
+.main__vidjet_content_update1_time {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.main__vidjet_content_update1_frame {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 598px;
+    height: 97px;
+    border-radius: 10px;
+    background: #FFF;
+    padding-left: 20px;
+}
+
+.main__vidjet_content_update_text_update {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.colortextgreen {
+    color: #657955;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.main__vidjet_content_update_text_descr {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.main__photo_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__photo_title {
+    color: #656565;
+    font-family: Mastodon;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.main__photo_weather_text {
+    display: inline;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.main__photo_weather {
+    margin-top: 47px;
+}
+
+.main__photo_date {
+    margin-top: 47px
+}
+
+.main__photo_date_text {
+    display: inline;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.main__photo_image {
+    margin-top: 21px;
+}
+
+.calendar {
+    margin-right: 13px;
+}
+
+.main__photo_lastupdate {
+    margin-top: 19px;
+}
+
+.main__photo_lastupdate_text {
+    display: inline;
+    padding-left: 11px;
+    color: rgba(0, 0, 0, 0.43);
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.main__info-steps_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 45px;
+}
+
+.main__info_title {
+    color: #656565;
+    font-family: Mastodon;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.main__info_container {
+    width: 735px;
+    height: 474px;
+    border-radius: 20px 0px;
+    background: rgba(246, 246, 246, 0.50);
+    margin-top: 18px;
+}
+
+.main__info_content {
+    display: inline-flex;
+    max-width: 672px;
+    padding: 50px 34px 86px 53px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 44px;
+}
+
+.main__info_content_titles ul {
+    padding-inline-start: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.main__info_content_data ul {
+    padding-inline-start: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.main__info_content_titles ul li {
+    list-style: none;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.main__info_content_titles ul li:nth-child(7) {
+    margin-bottom: 0px;
+}
+
+.main__info_content_titles ul li:nth-child(4) {
+    margin-bottom: 25px;
+}
+
+.main__info_content_titles ul li:nth-child(5) {
+    margin-bottom: 34px;
+}
+
+.main__info_content_data ul li {
+    list-style: none;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.main__info_content_data ul li:nth-child(2) {
+    margin-bottom: 30px;
+}
+
+.main__info_content_data ul li:nth-child(3) {
+    margin-bottom: 31px;
+}
+
+.main__info_content_data ul li:nth-child(7) {
+    margin-bottom: 0px;
+}
+
+.main__steps_title {
+    color: #656565;
+    font-family: Mastodon;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.main__steps_container {
+    width: 595px;
+    height: 474px;
+    border-radius: 0px 20px;
+    background: rgba(162, 197, 134, 0.06);
+    margin-top: 18px;
+    overflow: auto;
+}
+
+.main__steps_container::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f9f9fd;
+}
+  
+.main__steps_container::-webkit-scrollbar-thumb {
+    background-color: #cdd1ca;
+}
+  
+.main__steps_container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    background-color: #f9f9fd;
+}
+
+.main__steps_content {
+    padding: 33px 35px 26px 18px;
+    max-width: 524px;
+}
+
+.main__steps_content ol {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.main__steps_content ol li {
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+.main__steps_content ul {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    list-style-image: url('/img/Ellipse\ list.svg');
+}
+
+.work_progress {
+    max-width: 1380px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 82px;
+}
+
+.work_progress__title {
+    color: #657955;
+    font-family: Mastodon;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.work_progress__content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 97px;
+}
+
+.work_progress__question {
+    width: 357px;
+    margin: 0 auto;
+}
+
+.work_progress__question_text {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 51px;
+    padding-bottom: 16px;
+}
+
+.work_progress__question_button {
+    display: inline-flex;
+    width: 357px;
+    height: 92px;
+    padding: 30px 56px 31px 56px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: #657955;
+    cursor: pointer;
+    border: none;
+
+    color: #FFF;
+    font-family: "TT Firs Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.work_progress__status_title {
+    color: #656565;
+    font-family: Mastodon;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    margin-top: 82px;
+}
+
+.work_progress__status_name {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    margin-top: 22px;
+}
+
+.work_progress__report {
+    width: 555px;
+    height: 454px;
+    border-radius: 20px 0px;
+    background: #F6F6F6;
+    margin-top: 23px;
+}
+
+.work_progress__report_content {
+    width: 501px;
+    height: 387px;
+    padding: 27px 31px 40px 23px;
+}
+
+.work_progress__report_manager {
+    display: inline;
+    padding-left: 12px;
+    vertical-align: top;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.work_progress__report_date {
+    display: inline;
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    float: inline-end;
+}
+
+.work_progress__report_report {
+    width: 445px;
+    height: 353px;
+    background: #FFF;
+    margin-left: 56px;
+    margin-top: -10px;
+}
+
+.work_progress__report_report_title {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 18px;
+    padding-top: 22px;
+}
+
+.work_progress__report_report_text {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-left: 18px;
+    padding-top: 7px;
+    padding-right: 28px;
+}
+
+.work_progress__report_report_photos {
+    padding-left: 18px;
+    padding-top: 32px;
+    display: flex;
+    gap: 8px;
+}
+
+.work_progress__report_report_to_galery {
+    width: 115px;
+    height: 99px;
+    padding: 0px 24px 0px 23px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: none;
+    background: #F6F6F6;
+    cursor: pointer;
+
+    color: #657955;
+    text-align: center;
+    font-family: "TT Firs Neue";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.work_progress__report_report_checklist {
+    padding-left: 18px;
+    padding-top: 60px;
+}
+
+.work_progress__report_report_checklist_text {
+    display: inline;
+    color: #657955;
+    text-align: center;
+    font-family: "TT Firs Neue";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 10px;
+}
+
+.work_progress__last_changes {
+    width: 555px;
+    margin-top: 80px;
+}
+
+.work_progress__last_changes_text ul {
+    list-style: none;
+    color: #656565;
+    text-align: center;
+    font-family: "TT Firs Neue";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.work_progress__last_changes_text ul li {
+    margin-top: 11px;
+    white-space: nowrap;
+}
+
+.work_progress__last_changes_title {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+
+.work_progress__complites_steps_card {
+    width: 654px;
+    height: 138px;
+    border-radius: 5px;
+    background: rgba(162, 197, 134, 0.30);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    overflow: auto;
+}
+
+.work_progress__complites_steps_card::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f9f9fd;
+}
+  
+.work_progress__complites_steps_card::-webkit-scrollbar-thumb {
+    background-color: #cdd1ca;
+}
+  
+.work_progress__complites_steps_card::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    background-color: #f9f9fd;
+}
+
+.work_progress__complites_steps_card_title {
+    padding-left: 15px;
+    padding-top: 16px;
+}
+
+.work_progress__complites_steps_card_date {
+    display: inline;
+    color: rgba(0, 0, 0, 0.38);
+    font-family: "TT Firs Neue";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.work_progress__complites_steps_card_title_text {
+    display: inline;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 12px;
+}
+
+.work_progress__complites_steps_card_text {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.work_progress__day_fact_title {
+    color: #657955;
+    font-family: Mastodon;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.work_progress__day_fact_text {
+    width: 676px;
+    color: #695E68;
+    font-family: "TT Firs Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-top: 15px;
+}
+
+.work_progress__complites_steps_card_wbutton button {
+    position: relative;
+    background: none;
+    border: none;
+    padding-left: 638px;
+    bottom: 15px;
+}
+
+.work_progress__complites_steps_card_wbutton button img {
+    cursor: pointer;
+}
+
+.footer__block {
+    width: 100%;
+    height: 150px;
+    margin-top: 120px;
+    background: #657955;
+}
+
+.footer__block p {
+    color: #F6F6F6;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.catalog__title {
+    text-align: center;
+    color: #657955;
+    font-family: Mastodon;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 13px;
+    padding-bottom: 54px;
+}
+
+.step__name {
+    text-align: left;
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-bottom: 18px
+}
+
+.catalog__folders {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+}
+
+.catalog__folders-item {
+    width: 1380px;
+    height: 105px;
+    border-radius: 15px;
+    background: #F6F6F6;
+}
+
+.catalog__folders-link {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 14px;
+    padding-top: 5px;
+}
+
+.catalog__folders-item_content {
+    display: flex;
+    align-items: center;
+    padding-top: 33px;
+    padding-left: 34px;
+}
+
+.galery__title {
+    text-align: center;
+    color: #657955;
+    font-family: Mastodon;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 13px;
+    padding-bottom: 75px;
+}
+
+.galery__content_tools-filter {
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter__text {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.dropbtn {
+    display: inline-flex;
+    padding: 3px 10px 2px 9px;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    justify-content: start;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.filter__dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 135px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.show {display:block;}
+
+.galery__content_tools {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-container img {
+    width: 433px;
+    height: 373px;
+    cursor: pointer;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.popup {  
+    display: none; /* Скрыто по умолчанию */  
+    position: fixed;  
+    z-index: 1000;  
+    left: 0;  
+    top: 0;  
+    width: 100%;  
+    height: 100%;  
+    background-color: rgba(0, 0, 0, 0.8);  
+    justify-content: center;  
+    align-items: center; 
+}  
+
+.popup-content {  
+    background-color: #fff;  
+    width: 1350px;
+    height: 100%;
+    overflow-y: auto;
+}  
+
+.popup_img {  
+    width: 1107px;
+    height: 550px; 
+    margin-top: 27px;
+    margin-left: 121px;
+}  
+
+.close {  
+    color: #FFF;
+    cursor: pointer;  
+    font-size: 24px;  
+    position: absolute;  
+    right: 20px;  
+    top: 10px;  
+} 
+
+#popup-date {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+}
+
+.popup_camera {
+    padding-left: 41px;
+    padding-top: 34px;
+    cursor: pointer;
+}
+
+.popup__comments-item img {
+    width: 27px;
+    height: 27px;
+    margin-bottom: -5px;
+}
+
+.popup__comments_title {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 44px;
+    padding-top: 50px;
+}
+
+.popup__comments-item_flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popup__comments_content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-left: 42px;
+    margin-right: 42px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.popup__comments_name {
+    display: inline-block;
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.popup__comments_text {
+    display: inline-block;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-left: 30px;
+}
+
+.popup__comments_chat-link {
+    display: block;
+    padding-left: 18px;
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.popup__comments_time {
+    display: inline-block;
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.documents__title {
+    text-align: center;
+    color: #657955;
+    font-family: Mastodon;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 13px;
+    padding-bottom: 75px;
+}
+
+.documents__content_items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 27px;
+}
+
+.documents__content-item_inside {
+    width: 315px;
+    height: 410px;
+    background: #D9D9D9;
+    position: relative;
+}
+
+.document_svg {
+    padding-left: 75px;
+    padding-top: 45px;
+}
+
+.documents__content-item_name {
+    text-align: center;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 14px 31px 0 31px;
+}
+
+.documents__content-item_button {
+    display: inline-flex;
+    padding: 17px 38px 16px 38px;
+    justify-content: center;
+    align-items: center;
+    background: #657955;
+    border: none;
+    cursor: pointer;
+
+    color: #FFF;
+    font-family: "TT Firs Neue";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 82px;
+    position: absolute;
+    bottom: 20px;
+}
+
+.documents__content-item_update {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-top: 18px;
+}
+
+.chat__title {
+    text-align: center;
+    color: #657955;
+    font-family: Mastodon;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 13px;
+    padding-bottom: 3px;
+}
+
+.chat__nav {
+    display: flex;
+    justify-content: end;
+    gap: 76px;
+}
+
+.fade-in-out {
+    display: flex;
+    width: 113px;
+    height: 36px;
+    padding: 7px 17px 6px 19px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #636363;
+    margin: 0 auto;
+    margin-top: 5px;
+    opacity: 0.5;
+
+    color: #E5E5E5;
+    font-family: "TT Firs Neue";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.top-element {
+    display: flex;
+    width: 113px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #636363;
+    margin: 0 auto;
+    margin-top: 5px;
+    opacity: 0.5;
+    margin-bottom: 20px;
+
+    color: #E5E5E5;
+    font-family: "TT Firs Neue";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.chat__content {
+    max-height: 500px; /* Ограничиваем высоту контейнера чата */
+    overflow-y: auto; /* Добавляем прокрутку */
+    padding-right: 10px; /* Убираем скроллбар с основного содержимого */
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+}
+
+.chat__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 66px; /* Добавляем отступы между сообщениями */
+}
+
+.chat__content::-webkit-scrollbar {
+    display: none;
+}
+
+.chat__header {
+    text-align: center;
+  }
+  
+
+.chat__person-avatar {
+    border-radius: 50%;
+}
+  
+.chat__messages {
+    margin-left: 10px;
+}
+  
+.chat__message {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+  
+.chat__message-content {
+    /* width: auto;
+    max-width: 654px;
+    height: auto;
+    padding: 18px 33px 12px 33px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px 0px 0px 0px;
+    background: #657955;
+    
+    margin-left: 5px;
+
+    color: #FFF;
+    font-family: "TT Firs Neue";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    max-width: 100%; 
+    word-wrap: break-word; 
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+    white-space: pre-wrap; 
+    box-sizing: border-box;  */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background-color: #657955;
+    border-radius: 40px 0px 0px 0px;
+    max-width: 70%;
+    word-wrap: break-word;
+
+    color: #FFF;
+    font-family: "TT Firs Neue";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    display: inline-block; /* Делаем ширину блока зависящей от его содержимого */
+    max-width: 70%; /* Устанавливаем максимальную ширину, чтобы сообщения не были слишком длинными */
+    word-wrap: break-word; /* Переносим длинные слова */
+    box-sizing: border-box; /* Учитываем padding и border в ширине блока */
+}
+
+.chat__message-content--responder {
+    align-items: center;
+    border-radius: 0px 40px 0px 0px;
+    background: #D2D8D4;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+  
+.chat__item--responder {
+    flex-direction: row-reverse;
+}
+  
+.chat__item--responder .chat__message {
+    flex-direction: row-reverse;
+}
+  
+.chat__item--responder .chat__message-content {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.chat__message-time {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-left: 17px;
+}
+
+.chat__message-time--responder {
+    padding-right: 17px;
+    padding-left: 0;
+}
+
+/* .chat__item-user1 + .chat__item--responder,
+.chat__item--responder + .chat__item-user1 {
+  margin-top: 66px;
+} */
+
+/* .chat__item-user1 + .chat__item--responder,
+.chat__item--responder + .chat__item-user1 {
+  margin-top: 66px;
+} */
+
+.chat__message-file--responder {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 317px;
+    height: 63px;
+    border-radius: 20px 0px;
+    background: rgba(193, 193, 193, 0.50);
+}
+
+.chat__message-file-icon_name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1; /* Занимать оставшееся место */
+    min-width: 0; /* Позволить имени файла сокращаться */
+}
+
+.chat__message-file-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* .chat__input {
+    margin-top: 67px;
+    display: flex;
+    justify-content: center;
+    width: 1377px;
+    height: 94px;
+    background: #FFF;
+    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+    outline: none;
+    border: none;
+}
+
+.chat__input_field {
+    width: 1247px;
+    height: 94px;
+    background: #FFF;
+    flex-shrink: 0;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding-left: 53px;
+
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.chat__input_field::placeholder {
+    color: rgba(101, 101, 101, 0.50);
+    font-family: "TT Firs Neue";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+} */
+
+#chatForm {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.chat-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    outline: none;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.chat-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 10px 10px 10px 20px;
+    outline: none;
+
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+    border-radius: 10px;
+}
+
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.file-upload input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.send-button {
+    padding: 17px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #657955;
+    outline: none;
+    border: none;
+
+    color: #FFF;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.chat__message-file {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Разделить имя файла и иконку */
+    max-width: 100%; /* Контейнер будет занимать всю доступную ширину */
+}
+
+.chat__message-file-icon_name {
+    display: flex;
+    align-items: center;
+}
+
+.chat__message-file-name {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; /* Занимать оставшееся место в контейнере */
+}
+
+.chat__download_icon {
+    cursor: pointer;
+    margin-left: 10px;
+    flex-shrink: 0; /* Запрещаем иконке уменьшаться */
+}
+
+.chat-input::placeholder {
+    color: rgba(101, 101, 101, 0.50);
+    font-family: "TT Firs Neue";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.contacts__title {
+    text-align: center;
+    color: #657955;
+    font-family: Mastodon;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 13px;
+    padding-bottom: 104px;
+}
+
+.contacts__client_title {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 202px;
+}
+
+.contacts__client_content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 730px;
+    margin-top: 26px;
+    gap: 30px;
+}
+
+.contacts__client_names {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacts__client_info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacts__vk_icon {
+    height: 26px;
+}
+
+.contacts__client_change {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacts__client_content p {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+}
+
+.contacts__socnetworks_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+}
+
+.edit_network_field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add_network_field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#editSocialNetwork_1 {
+    border-radius: 10px;
+    background: #F6F6F6;
+    padding: 13px 0 13px 19px;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+#editSocialNetwork_0 {
+    border-radius: 10px;
+    background: #F6F6F6;
+    padding: 13px 0 13px 19px;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+#editSocialNetwork_2 {
+    border-radius: 10px;
+    background: #F6F6F6;
+    padding: 13px 0 13px 19px;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+.contacts__client {
+    margin-bottom: 121px;
+}
+
+#email_input {
+    border-radius: 10px;
+    background: #F6F6F6;
+    padding: 13px 0 13px 19px;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+#phone_input {
+    border-radius: 10px;
+    background: #F6F6F6;
+    padding: 13px 0 13px 19px;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+#newSocialNetworkInput {
+    border-radius: 10px;
+    background: #F6F6F6;
+    padding: 13px 0 13px 19px;
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+.save_change {
+    background: #657955;
+    padding: 5px 10px 5px 10px;
+    color: #fff;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+.contacts__manager_title {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 162px;
+}  
+
+.contacts__manager_content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 457px;
+    margin-left: 106px;
+    margin-top: 26px;
+}
+
+.contacts__manager_content p {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+}
+
+.contacts__manager_names {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    white-space: nowrap;
+}
+
+.contacts__manager_info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacts__adress_info {
+    white-space: normal;
+}
+
+.contacts__flex_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 93px;
+}
+
+.contacts__feedback_title {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.contacts__feedback_content {
+    max-width: 522px;
+}
+
+.contacts__feedback_email-form_name {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.email-input {
+    width: 522px;
+    height: 65px;
+    border-radius: 10px;
+    background: #F6F6F6;
+    padding: 17px 0 17px 23px;
+
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+.contacts__feedback_email-form {
+    margin-bottom: 22px;
+}
+
+.contacts__feedback_question-form_name {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.question-input {
+    width: 100%;
+    height: 140px;
+    resize: none;
+    border-radius: 10px;
+    background: #F6F6F6;
+    border: none;
+
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 17px 0 0 23px;
+}
+
+.contacts__feedback_question-form {
+    margin-bottom: 22px;
+}
+
+.contacts__feedback_attachment {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+
+.contacts__feedback_attachment_text {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.contacts__feedback_attachment_button {
+    color: #657955;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.contacts__feedback_choose_text {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.contacts__feedback_choose {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts__feedback_choose_flex-container {
+    display: flex;
+    gap: 42px;
+}
+
+.contacts__feedback_choose_flex-container label {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.form_radio input[type=radio] {
+	display: none;
+}
+
+.form_radio label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+    line-height: 24px;
+	margin-right: 0;
+	user-select: none;
+}
+
+.form_radio label:before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 0;
+    background: url(../img/mark_choose-disabled.svg) 0 0 no-repeat;
+}
+ 
+.form_radio input[type=radio]:checked + label:before {
+	background: url(../img/mark_choose.svg) 0 0 no-repeat;
+}
+
+.contacts__feedback_forms {
+    margin-bottom: 61px;
+}
+
+.contacts__feedback_send-button_container {
+    padding-left: 127px;
+}
+
+.contacts__feedback_send-button {
+    width: 269px;
+    height: 62px;
+    border: none;
+    outline: none;
+    background: #657955;
+
+    color: #FFF;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.footer__chat {
+    margin-top: 60px;
+}
+
+.popup-com {  
+    display: none;  
+    position: relative;
+    width: 654px;
+    height: 136px;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.25);
+    background: #FFF;
+    box-shadow: -4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    overflow: auto;
+} 
+
+.poup-com_title {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 25px;
+    padding-top: 13px;
+}
+
+.poup-com__comments {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.poup-com__comment1_name_image {
+    display: flex;
+    padding-left: 16px;
+    padding-top: 12px;
+}
+
+.poup-com__comment1_name {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+}
+
+.popup-com_tochat {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-left: 34px;
+}
+
+.poup-com__comment1_flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.poup-com__comment1_text {
+    color: #000;
+    font-family: "TT Firs Neue";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+}
+
+.poup-com__comment1_time {
+    color: #656565;
+    font-family: "TT Firs Neue";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-right: 20px;
+}
+

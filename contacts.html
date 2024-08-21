@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Контакты | НАСЛЕДИЕ</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__logo">
+                        <img src="img/logo 2.svg" alt="logo" class="logo">
+                    </div>
+        
+                    <nav class="header__nav">
+                        <ul class="header__nav_menu">
+                            <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+                            <li class="header__nav-item"><a href="galery_catalog.html" class="header__nav-link">Галерея</a></li>
+                            <li class="header__nav-item"><a href="documents.html" class="header__nav-link">Документы</a></li>
+                            <li class="header__nav-item"><a href="chat.html" class="header__nav-link">Чат</a></li>
+                            <li class="header__nav-item"><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                        </ul>
+                    </nav>
+        
+                    <div class="header__buttons">
+                        <button class="header__notifications">
+                            <img src="img/notifications.svg" alt="notifications" class="bell">
+                        </button>
+
+                        <div class="notifications-popup">
+                            <div class="notifications-popup__header">Уведомления</div>
+                            <div class="notifications-popup__content">
+                                <!-- Здесь будут отображаться уведомления -->
+                            </div>
+                            <button class="notifications-popup__close">&times;</button>
+                        </div>
+            
+                        <button class="header__exit">
+                            <img src="img/exit.svg" alt="exit" class="exit_icon">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="header__separator"></div>
+            </div>
+        </header>
+        
+       <main class="main_">
+            <section class="contacts">
+                <div class="container">
+                    <h1 class="contacts__title">Контакты</h1>
+
+                    <div class="contacts__flex_container">
+                        <div class="contacts__content">
+                            <div class="contacts__client">
+                                <h2 class="contacts__client_title">Ваши контакты</h2>
+        
+                                <div class="contacts__client_content">
+                                    <div class="contacts__client_names">
+                                        <p class="contacts__email_name">Электронная почта:</p>
+                                        <p class="contacts__phone_name">Номер телефона:</p>
+                                        <p class="contacts__socnetworks_name">Социальные сети:</p>
+                                    </div>
+                                
+                                    <div class="contacts__client_info">
+                                        <p class="contacts__email_info" id="email">email@example.com</p>
+                                        <p class="contacts__phone_info" id="phone">+7 123 456 7890</p>
+                                        <div class="contacts__socnetworks_info" id="socialNetworks">
+                                            <a href="vk.com"><img src="./img/telegram_icon.svg" alt="" class="contacts__telegram_icon"></a>
+                                            <a href="t.me"><img src="./img/vk_icon.svg" alt="" class="contacts__vk_icon"></a>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="contacts__client_change">
+                                        <p class="contacts__client_change_button"><a href="#" onclick="editField('email')">[Редактировать]</a></p>
+                                        <p class="contacts__client_change_button"><a href="#" onclick="editField('phone')">[Редактировать]</a></p>
+                                        <p class="contacts__client_add-change_button">
+                                            [<a href="#" onclick="addSocialNetwork()">Добавить</a> / <a href="#" onclick="editSocialNetworks()">Редактировать</a>]
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="contacts__manager">
+                                <h2 class="contacts__manager_title">Контакты менеджера</h2>
+    
+                                <div class="contacts__manager_content">
+                                    <div class="contacts__manager_names">
+                                        <p class="contacts__manager-name_name">Менеджер проекта:</p>
+                                        <p class="contacts__email_name">Электронная почта:</p>
+                                        <p class="contacts__phone_name">Номер телефона:</p>
+                                        <p class="contacts__socnetworks_name">Социальные сети:</p>
+                                        <p class="contacts__adress_name">Адрес офиса:</p>
+                                    </div>
+    
+                                    <div class="contacts__manager_info">
+                                        <p class="contacts__manager-name_info">Вася Пупкин</p>
+                                        <p class="contacts__email_info">email@example.com</p>
+                                        <p class="contacts__phone_info">+7 123 456 7890</p>
+                                        <div class="contacts__socnetworks_info">
+                                            <a href=""><img src="./img/telegram_icon.svg" alt="" class="contacts__telegram_icon"></a>
+                                            <a href=""><img src="./img/vk_icon.svg" alt="" class="contacts__vk_icon"></a>
+                                        </div>
+                                        <p class="contacts__adress_info">г. Москва, ул. Примерная, д. 1, офис 101</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="contacts__feedback_content">
+                            <h2 class="contacts__feedback_title">Обратная связь</h2>
+
+                            <div class="contacts__feedback_forms">
+                                <div class="contacts__feedback_email-form">
+                                    <p class="contacts__feedback_email-form_name">Электронная почта:</p>
+
+                                    <form id="email_form">
+                                        <div class="contacts__feedback_email-form_container">
+                                            <input type="text" class="email-input" required>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="contacts__feedback_question-form">
+                                    <p class="contacts__feedback_question-form_name">Ваш вопрос:</p>
+
+                                    <form id="question_form">
+                                        <div class="contacts__feedback_question-form_container">
+                                            <textarea name="text" class="question-input"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="contacts__feedback_attachment">
+                                    <p class="contacts__feedback_attachment_text">Прикрепить изображение:</p>
+
+                                    <label class="file-upload">
+                                        <a class="contacts__feedback_attachment_button">Загрузить с устройства</a>
+                                        <input type="file" name="file">
+                                    </label>
+                                </div>
+
+                                <div class="contacts__feedback_choose">
+                                    <p class="contacts__feedback_choose_text">Способ ответа:</p>
+
+                                    <div class="contacts__feedback_choose_flex-container">
+                                        <div class="form_radio">
+                                            <input id="radio-1" type="radio" name="radio" value="email">
+                                            <label for="radio-1">E-mail</label>
+                                        </div>
+                                         
+                                        <div class="form_radio">
+                                            <input id="radio-2" type="radio" name="radio" value="telegram">
+                                            <label for="radio-2">Telegram</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contacts__feedback_send-button_container">
+                                <button class="contacts__feedback_send-button">ОТПРАВИТЬ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+       </main>
+
+       <footer class="footer">
+            <div class="footer__block">
+                <p>ООО АСК "Наследие". All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/contacts.js"></script>
+</body>
+</html>
